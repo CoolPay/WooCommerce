@@ -130,7 +130,7 @@ class WC_CoolPay_Settings {
 					'coolpay_cardtypelock' => array(
                         'title' => __( 'Payment methods', 'woo-coolpay' ),
                         'type' => 'text', 
-                        'description' => __( 'Default: creditcard. Type in the cards you wish to accept (comma separated). See the valid payment types here: <b>http://tech.coolpay.net/appendixes/payment-methods/</b>', 'woo-coolpay' ),
+                        'description' => __( 'Default: creditcard. Type in the cards you wish to accept (comma separated). See the valid payment types here: <b>http://tech.coolpay.com/appendixes/payment-methods/</b>', 'woo-coolpay' ),
                         'default' => 'creditcard',
 					),
 					'coolpay_branding_id' => array(

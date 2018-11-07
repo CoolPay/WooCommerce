@@ -9,7 +9,7 @@
  * @package        Woocommerce_CoolPay/Classes
  * @category       Class
  * @author         PerfectSolution
- * @docs        http://tech.coolpay.net/api/services/?scope=merchant
+ * @docs        http://tech.coolpay.com/api/services/?scope=merchant
  */
 
 class WC_CoolPay_API_Transaction extends WC_CoolPay_API {

@@ -267,7 +267,7 @@ msgstr ""
 #: classes/woocommerce-coolpay-settings.php:133
 msgid ""
 "Default: creditcard. Type in the cards you wish to accept (comma separated). "
-"See the valid payment types here: <b>http://tech.coolpay.net/appendixes/"
+"See the valid payment types here: <b>http://tech.coolpay.com/appendixes/"
 "payment-methods/</b>"
 msgstr ""
 

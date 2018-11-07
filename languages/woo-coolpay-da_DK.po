@@ -285,12 +285,12 @@ msgstr "Betalingsmetoder"
 #: classes/woocommerce-coolpay-settings.php:133
 msgid ""
 "Default: creditcard. Type in the cards you wish to accept (comma separated). "
-"See the valid payment types here: <b>http://tech.coolpay.net/appendixes/"
+"See the valid payment types here: <b>http://tech.coolpay.com/appendixes/"
 "payment-methods/</b>"
 msgstr ""
 "Standard: creditcard. Indtast de korttyper, du ønsker at aktivere "
 "(kommasepareret). Se en liste med de mulige betalingstyper her: <b>http://"
-"tech.coolpay.net/appendixes/payment-methods/</b>"
+"tech.coolpay.com/appendixes/payment-methods/</b>"
 
 #: classes/woocommerce-coolpay-settings.php:137
 msgid "Branding ID"
@@ -858,7 +858,7 @@ msgstr "http://perfect-solution.dk"
 #~ msgstr ""
 #~ "Standard: creditcard. Indtast de korttyper, du ønsker at aktivere "
 #~ "(kommasepareret). Se en liste med de mulige betalingstyper her: <b>http://"
-#~ "tech.coolpay.net/appendixes/payment-methods/</b>"
+#~ "tech.coolpay.com/appendixes/payment-methods/</b>"
 
 #, fuzzy
 #~| msgid "Enable Swipp payment"

@@ -7,7 +7,7 @@
  * @package		Woocommerce_CoolPay/Classes
  * @category	Class
  * @author 		PerfectSolution
- * @docs        http://tech.coolpay.net/api/services/?scope=merchant
+ * @docs        http://tech.coolpay.com/api/services/?scope=merchant
  */
 
 class WC_CoolPay_API
@@ -24,7 +24,7 @@ class WC_CoolPay_API
      * Contains the API url
      * @access protected
      */
-    protected $api_url = 'https://api.coolpay.net/';
+    protected $api_url = 'https://api.coolpay.com/';
 
 
 	/**
