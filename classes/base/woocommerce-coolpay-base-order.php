@@ -67,7 +67,7 @@ class WC_CoolPay_Base_Order extends WC_Order {
 	 * @return string
 	 */
 	public function get_payment_id() {
-		return get_post_meta( $this->get_id(), 'QUICKPAY_PAYMENT_ID', true );
+		return get_post_meta( $this->get_id(), 'COOLPAY_PAYMENT_ID', true );
 	}
 
 	/**
@@ -79,7 +79,7 @@ class WC_CoolPay_Base_Order extends WC_Order {
 	 * @return void
 	 */
 	public function set_payment_id( $payment_link ) {
-		update_post_meta( $this->get_id(), 'QUICKPAY_PAYMENT_ID', $payment_link );
+		update_post_meta( $this->get_id(), 'COOLPAY_PAYMENT_ID', $payment_link );
 	}
 
 	/**
@@ -91,7 +91,7 @@ class WC_CoolPay_Base_Order extends WC_Order {
 	 * @return void
 	 */
 	public function delete_payment_id() {
-		delete_post_meta( $this->get_id(), 'QUICKPAY_PAYMENT_ID' );
+		delete_post_meta( $this->get_id(), 'COOLPAY_PAYMENT_ID' );
 	}
 
 	/**
@@ -103,7 +103,7 @@ class WC_CoolPay_Base_Order extends WC_Order {
 	 * @return string
 	 */
 	public function get_payment_link() {
-		return get_post_meta( $this->get_id(), 'QUICKPAY_PAYMENT_LINK', true );
+		return get_post_meta( $this->get_id(), 'COOLPAY_PAYMENT_LINK', true );
 	}
 
 	/**
@@ -115,7 +115,7 @@ class WC_CoolPay_Base_Order extends WC_Order {
 	 * @return void
 	 */
 	public function set_payment_link( $payment_link ) {
-		update_post_meta( $this->get_id(), 'QUICKPAY_PAYMENT_LINK', $payment_link );
+		update_post_meta( $this->get_id(), 'COOLPAY_PAYMENT_LINK', $payment_link );
 	}
 
 	/**
@@ -127,7 +127,7 @@ class WC_CoolPay_Base_Order extends WC_Order {
 	 * @return void
 	 */
 	public function delete_payment_link() {
-		delete_post_meta( $this->get_id(), 'QUICKPAY_PAYMENT_LINK' );
+		delete_post_meta( $this->get_id(), 'COOLPAY_PAYMENT_LINK' );
 	}
 
 	/**

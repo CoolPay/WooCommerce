@@ -7,7 +7,7 @@
  * @package		Woocommerce_CoolPay/Classes
  * @category	Class
  * @author 		PerfectSolution
- * @docs        http://tech.coolpay.com/api/services/?scope=merchant
+ * @docs        https://coolpay.com/docs/
  */
 
 class WC_CoolPay_API
@@ -78,12 +78,12 @@ class WC_CoolPay_API
 	 */
     public function is_authorized_callback( $response_body )
     {
-        if( ! isset( $_SERVER["HTTP_QUICKPAY_CHECKSUM_SHA256"] ) )
+        if( ! isset( $_SERVER["HTTP_COOLPAY_CHECKSUM_SHA256"] ) )
         {
             return FALSE;
         }
 
-        return hash_hmac( 'sha256', $response_body, WC_QP()->s( 'coolpay_privatekey' ) ) == $_SERVER["HTTP_QUICKPAY_CHECKSUM_SHA256"];
+        return hash_hmac( 'sha256', $response_body, WC_QP()->s( 'coolpay_privatekey' ) ) == $_SERVER["HTTP_COOLPAY_CHECKSUM_SHA256"];
     }
 
 

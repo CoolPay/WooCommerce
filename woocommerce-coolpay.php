@@ -163,12 +163,27 @@ function init_coolpay_gateway() {
 			require_once WCQP_PATH . 'classes/instances/viabill.php';
 			require_once WCQP_PATH . 'classes/instances/klarna.php';
 			require_once WCQP_PATH . 'classes/instances/sofort.php';
+			require_once WCQP_PATH . 'classes/instances/paypal.php';
+			require_once WCQP_PATH . 'classes/instances/bitcoin.php';			
+			require_once WCQP_PATH . 'classes/instances/ideal.php';		
+			require_once WCQP_PATH . 'classes/instances/paysafecard.php';
+			require_once WCQP_PATH . 'classes/instances/swish.php';
+			require_once WCQP_PATH . 'classes/instances/trustly.php';
+			require_once WCQP_PATH . 'classes/instances/vipps.php';
+
 
 			$methods[] = 'WC_CoolPay_MobilePay';
 			$methods[] = 'WC_CoolPay_ViaBill';
 			$methods[] = 'WC_CoolPay_Klarna';
 			$methods[] = 'WC_CoolPay_Sofort';
-
+			$methods[] = 'WC_CoolPay_PayPal';			
+			$methods[] = 'WC_CoolPay_Bitcoin';		
+			$methods[] = 'WC_CoolPay_iDEAL';					
+			$methods[] = 'WC_CoolPay_paysafecard';		
+			$methods[] = 'WC_CoolPay_Swish';		
+			$methods[] = 'WC_CoolPay_Trustly';		
+			$methods[] = 'WC_CoolPay_Vipps';		
+						
 			return $methods;
 		}
 
@@ -185,7 +200,7 @@ function init_coolpay_gateway() {
 			add_action( 'woocommerce_api_wc_' . $this->id, array( $this, 'callback_handler' ) );
 			add_action( 'woocommerce_receipt_' . $this->id, array( $this, 'receipt_page' ) );
 			add_action( 'woocommerce_order_status_completed', array( $this, 'woocommerce_order_status_completed' ) );
-		
+			add_action( 'in_plugin_update_message-woocommerce-coolpay/woocommerce-coolpay.php', array( __CLASS__, 'in_plugin_update_message' ) );
 
 			// WooCommerce Subscriptions hooks/filters
 			add_action( 'woocommerce_scheduled_subscription_payment_' . $this->id, array( $this, 'scheduled_subscription_payment' ), 10, 2 );
@@ -217,7 +232,10 @@ function init_coolpay_gateway() {
 				add_action( 'wp_ajax_coolpay_empty_logs', array( $this, 'ajax_empty_logs' ) );
 				add_action( 'wp_ajax_coolpay_ping_api', array( $this, 'ajax_ping_api' ) );
 				add_action( 'wp_ajax_coolpay_run_data_upgrader', 'WC_CoolPay_Install::ajax_run_upgrader' );
-				
+				add_action( 'in_plugin_update_message-woocommerce-coolpay/woocommerce-coolpay.php', array(
+					__CLASS__,
+					'in_plugin_update_message',
+				) );
 			}
 
 			// Make sure not to add these actions multiple times
@@ -1496,7 +1514,30 @@ function init_coolpay_gateway() {
 		}
 
 
-		
+		/**
+		 *
+		 * in_plugin_update_message
+		 *
+		 * Show plugin changes. Code adapted from W3 Total Cache.
+		 *
+		 * @access public
+		 * @static
+		 * @return void
+		 */
+		public static function in_plugin_update_message( $args ) {
+			$transient_name = 'wcqp_upgrade_notice_' . $args['Version'];
+			if ( false === ( $upgrade_notice = get_transient( $transient_name ) ) ) {
+				$response = wp_remote_get( 'https://plugins.svn.wordpress.org/woocommerce-coolpay/trunk/README.txt' );
+
+				if ( ! is_wp_error( $response ) && ! empty( $response['body'] ) ) {
+					$upgrade_notice = self::parse_update_notice( $response['body'] );
+					set_transient( $transient_name, $upgrade_notice, DAY_IN_SECONDS );
+				}
+			}
+
+			echo wp_kses_post( $upgrade_notice );
+		}
+
 		/**
 		 *
 		 * parse_update_notice
