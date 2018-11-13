@@ -17,7 +17,7 @@ This is only a part of the many features found in this plugin.
 ## Installation
 1. Download the plugin here: [CoolPay](https://github.com/CoolPay/WooCommerce/archive/master.zip)
 2. Unzip the `WooCommerce-master.zip`
-3. Upload the 'woocommerce-coolpay' folder to /wp-content/plugins/ on your server.
+3. Create a new folder called: 'woocommerce-coolpay' in /wp-content/plugins/ on your server and upload the content to this.
 4. Log in to Wordpress administration, click on the 'Plugins' tab.
 5. Find WooCommerce CoolPay in the plugin overview and activate it.
 6. Go to WooCommerce -> Settings -> Payment Gateways -> CoolPay.
