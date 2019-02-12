@@ -52,7 +52,7 @@ class WC_CoolPay_Sofort extends WC_CoolPay_Instance {
                 'title' => __( 'Customer Message', 'woo-coolpay' ),
                 'type' => 'textarea',
                 'description' => __( 'This controls the description which the user sees during checkout.', 'woo-coolpay' ),
-                'default' => __('Pay with Sofort', 'woo-coolpay')
+                'default' => __('Pay with your mobile phone', 'woo-coolpay')
             ),
         );
     }

@@ -72,7 +72,7 @@ class WC_CoolPay_Helper {
 	}
 
 	public static function static_version() {
-		return 'wcqp-' . WCQP_VERSION;
+		return 'wccp-' . WCCP_VERSION;
 	}
 
 
@@ -176,7 +176,7 @@ class WC_CoolPay_Helper {
 		);
 
 		if ( array_key_exists( trim( $payment_type ), $logos ) ) {
-			return WC_QP()->plugin_url( 'assets/images/cards/' . $logos[ $payment_type ] );
+			return WC_CP()->plugin_url( 'assets/images/cards/' . $logos[ $payment_type ] );
 		}
 
 		return null;

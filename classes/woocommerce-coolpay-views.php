@@ -17,7 +17,7 @@ class WC_CoolPay_Views
             extract($args);
         }
 
-        $file = WCQP_PATH . 'views/' . trim($path);
+        $file = WCCP_PATH . 'views/' . trim($path);
 
         if (file_exists($file)) {
             include $file;

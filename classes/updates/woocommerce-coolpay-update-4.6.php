@@ -21,7 +21,7 @@ $subscriptions = $wpdb->get_results("SELECT * FROM {$wpdb->posts} p WHERE p.post
 
 if (!empty($subscriptions)) {
     foreach( $subscriptions as $subscription_post ) {
-        // Change from DB object to a QP Order object
+        // Change from DB object to a CP Order object
         $subscription = new WC_CoolPay_Order($subscription_post->ID);
         // Create order object
         $order = new WC_CoolPay_Order($subscription_post->post_parent);

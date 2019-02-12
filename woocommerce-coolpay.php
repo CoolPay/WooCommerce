@@ -2,25 +2,23 @@
 
 /**
  * Plugin Name: WooCommerce CoolPay
- * Plugin URI: http://wordpress.org/plugins/woocommerce-coolpay/
+ * Plugin URI: https://wordpress.org/plugins/woo-coolpay/
  * Description: Integrates your CoolPay payment gateway into your WooCommerce installation.
- * Version: 4.9.4
+ * Version: 4.10.0
  * Author: Perfect Solution
  * Text Domain: woo-coolpay
  * Author URI: http://perfect-solution.dk
- * Wiki: http://coolpay.perfect-solution.dk/
-
  * WC requires at least: 3.0
- * WC tested up to: 3.4.2
-*/
+ * WC tested up to: 3.5.1
+ */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'WCQP_VERSION', '4.9.4' );
-define( 'WCQP_URL', plugins_url( __FILE__ ) );
-define( 'WCQP_PATH', plugin_dir_path( __FILE__ ) );
+define( 'WCCP_VERSION', '4.10.0' );
+define( 'WCCP_URL', plugins_url( __FILE__ ) );
+define( 'WCCP_PATH', plugin_dir_path( __FILE__ ) );
 
 add_action( 'plugins_loaded', 'init_coolpay_gateway', 0 );
 
@@ -39,7 +37,7 @@ function init_coolpay_gateway() {
 	 * Required functions
 	 */
 	if ( ! function_exists( 'is_woocommerce_active' ) ) {
-		require_once WCQP_PATH . 'woo-includes/woo-functions.php';
+		require_once WCCP_PATH . 'woo-includes/woo-functions.php';
 	}
 
 	/**
@@ -54,20 +52,24 @@ function init_coolpay_gateway() {
 	}
 
 	// Import helper classes
-	require_once WCQP_PATH . 'classes/woocommerce-coolpay-install.php';
-	require_once WCQP_PATH . 'classes/api/woocommerce-coolpay-api.php';
-	require_once WCQP_PATH . 'classes/api/woocommerce-coolpay-api-transaction.php';
-	require_once WCQP_PATH . 'classes/api/woocommerce-coolpay-api-payment.php';
-	require_once WCQP_PATH . 'classes/api/woocommerce-coolpay-api-subscription.php';
-	require_once WCQP_PATH . 'classes/woocommerce-coolpay-exceptions.php';
-	require_once WCQP_PATH . 'classes/woocommerce-coolpay-log.php';
-	require_once WCQP_PATH . 'classes/woocommerce-coolpay-helper.php';
-	require_once WCQP_PATH . 'classes/woocommerce-coolpay-address.php';
-	require_once WCQP_PATH . 'classes/woocommerce-coolpay-settings.php';
-	require_once WCQP_PATH . 'classes/woocommerce-coolpay-order.php';
-	require_once WCQP_PATH . 'classes/woocommerce-coolpay-subscription.php';
-	require_once WCQP_PATH . 'classes/woocommerce-coolpay-countries.php';
-	require_once WCQP_PATH . 'classes/woocommerce-coolpay-views.php';
+	require_once WCCP_PATH . 'helpers/notices.php';
+	require_once WCCP_PATH . 'classes/woocommerce-coolpay-install.php';
+	require_once WCCP_PATH . 'classes/api/woocommerce-coolpay-api.php';
+	require_once WCCP_PATH . 'classes/api/woocommerce-coolpay-api-transaction.php';
+	require_once WCCP_PATH . 'classes/api/woocommerce-coolpay-api-payment.php';
+	require_once WCCP_PATH . 'classes/api/woocommerce-coolpay-api-subscription.php';
+	require_once WCCP_PATH . 'classes/modules/woocommerce-coolpay-module.php';
+	require_once WCCP_PATH . 'classes/modules/woocommerce-coolpay-emails.php';
+	require_once WCCP_PATH . 'classes/modules/woocommerce-coolpay-admin-orders.php';
+	require_once WCCP_PATH . 'classes/woocommerce-coolpay-exceptions.php';
+	require_once WCCP_PATH . 'classes/woocommerce-coolpay-log.php';
+	require_once WCCP_PATH . 'classes/woocommerce-coolpay-helper.php';
+	require_once WCCP_PATH . 'classes/woocommerce-coolpay-address.php';
+	require_once WCCP_PATH . 'classes/woocommerce-coolpay-settings.php';
+	require_once WCCP_PATH . 'classes/woocommerce-coolpay-order.php';
+	require_once WCCP_PATH . 'classes/woocommerce-coolpay-subscription.php';
+	require_once WCCP_PATH . 'classes/woocommerce-coolpay-countries.php';
+	require_once WCCP_PATH . 'classes/woocommerce-coolpay-views.php';
 
 
 	// Main class
@@ -158,32 +160,17 @@ function init_coolpay_gateway() {
 		 * @return void
 		 */
 		public static function filter_load_instances( $methods ) {
-			require_once WCQP_PATH . 'classes/instances/instance.php';
-			require_once WCQP_PATH . 'classes/instances/mobilepay.php';
-			require_once WCQP_PATH . 'classes/instances/viabill.php';
-			require_once WCQP_PATH . 'classes/instances/klarna.php';
-			require_once WCQP_PATH . 'classes/instances/sofort.php';
-			require_once WCQP_PATH . 'classes/instances/paypal.php';
-			require_once WCQP_PATH . 'classes/instances/bitcoin.php';			
-			require_once WCQP_PATH . 'classes/instances/ideal.php';		
-			require_once WCQP_PATH . 'classes/instances/paysafecard.php';
-			require_once WCQP_PATH . 'classes/instances/swish.php';
-			require_once WCQP_PATH . 'classes/instances/trustly.php';
-			require_once WCQP_PATH . 'classes/instances/vipps.php';
-
+			require_once WCCP_PATH . 'classes/instances/instance.php';
+			require_once WCCP_PATH . 'classes/instances/mobilepay.php';
+			require_once WCCP_PATH . 'classes/instances/viabill.php';
+			require_once WCCP_PATH . 'classes/instances/klarna.php';
+			require_once WCCP_PATH . 'classes/instances/sofort.php';
 
 			$methods[] = 'WC_CoolPay_MobilePay';
 			$methods[] = 'WC_CoolPay_ViaBill';
 			$methods[] = 'WC_CoolPay_Klarna';
 			$methods[] = 'WC_CoolPay_Sofort';
-			$methods[] = 'WC_CoolPay_PayPal';			
-			$methods[] = 'WC_CoolPay_Bitcoin';		
-			$methods[] = 'WC_CoolPay_iDEAL';					
-			$methods[] = 'WC_CoolPay_paysafecard';		
-			$methods[] = 'WC_CoolPay_Swish';		
-			$methods[] = 'WC_CoolPay_Trustly';		
-			$methods[] = 'WC_CoolPay_Vipps';		
-						
+
 			return $methods;
 		}
 
@@ -197,6 +184,9 @@ function init_coolpay_gateway() {
 		 * @return string
 		 */
 		public function hooks_and_filters() {
+			WC_CoolPay_Admin_Orders::get_instance();
+			WC_CoolPay_Emails::get_instance();
+
 			add_action( 'woocommerce_api_wc_' . $this->id, array( $this, 'callback_handler' ) );
 			add_action( 'woocommerce_receipt_' . $this->id, array( $this, 'receipt_page' ) );
 			add_action( 'woocommerce_order_status_completed', array( $this, 'woocommerce_order_status_completed' ) );
@@ -254,8 +244,6 @@ function init_coolpay_gateway() {
 			}
 
 			add_action( 'init', 'WC_CoolPay_Helper::load_i18n' );
-
-
 			add_filter( 'woocommerce_gateway_icon', array( $this, 'apply_gateway_icons' ), 2, 3 );
 
 			// Third party plugins
@@ -926,7 +914,7 @@ function init_coolpay_gateway() {
 				// Get last transaction in operation history
 				$transaction = end( $json->operations );
 
-				// Is the transaction accepted and approved by QP / Acquirer?
+				// Is the transaction accepted and approved by CP / Acquirer?
 				if ( $json->accepted ) {
 
 					// Perform action depending on the operation status type
@@ -1038,7 +1026,7 @@ function init_coolpay_gateway() {
 					$this->log->separator();
 					$this->log->add( sprintf( __( 'Transaction failed for #%s.', 'woo-coolpay' ), $order_number ) );
 					$this->log->add( sprintf( __( 'CoolPay status code: %s.', 'woo-coolpay' ), $transaction->qp_status_code ) );
-					$this->log->add( sprintf( __( 'CoolPay status message: %s.', 'woo-coolpay' ), $transaction->qp_status_msg ) );
+					$this->log->add( sprintf( __( 'CoolPay status message: %s.', 'woo-coolpay' ), $transaction->cp_status_msg ) );
 					$this->log->add( sprintf( __( 'Acquirer status code: %s', 'woo-coolpay' ), $transaction->aq_status_code ) );
 					$this->log->add( sprintf( __( 'Acquirer status message: %s', 'woo-coolpay' ), $transaction->aq_status_msg ) );
 					$this->log->separator();
@@ -1098,7 +1086,7 @@ function init_coolpay_gateway() {
 		 * @return string
 		 */
 		public function admin_options() {
-			echo "<h3>CoolPay - {$this->id}, v" . WCQP_VERSION . "</h3>";
+			echo "<h3>CoolPay - {$this->id}, v" . WCCP_VERSION . "</h3>";
 			echo "<p>" . __( 'Allows you to receive payments via CoolPay.', 'woo-coolpay' ) . "</p>";
 
 			WC_CoolPay_Settings::clear_logs_section();
@@ -1157,13 +1145,23 @@ function init_coolpay_gateway() {
 
 			$transaction_id = $order->get_transaction_id();
 			if ( $transaction_id && $order->has_coolpay_payment() ) {
+				$state = null;
 				try {
 					$transaction = new WC_CoolPay_API_Payment();
 					$transaction->get( $transaction_id );
 					$transaction->cache_transaction();
 
-					$status = $transaction->get_current_type();
+					$state = $transaction->get_state();
 
+					try {
+						$status = $transaction->get_current_type();
+					} catch ( CoolPay_API_Exception $e ) {
+						if ( $state !== 'initial' ) {
+							throw new CoolPay_API_Exception( $e->getMessage() );
+						}
+					
+					$status = $state;
+					}
 					echo "<p class=\"woocommerce-coolpay-{$status}\"><strong>" . __( 'Current payment state', 'woo-coolpay' ) . ": " . $status . "</strong></p>";
 
 					if ( $transaction->is_action_allowed( 'standard_actions' ) ) {
@@ -1171,25 +1169,25 @@ function init_coolpay_gateway() {
 						echo "<ul class=\"order_action\">";
 
 						if ( $transaction->is_action_allowed( 'capture' ) ) {
-							echo "<li class=\"qp-full-width\"><a class=\"button button-primary\" data-action=\"capture\" data-confirm=\"" . __( 'You are about to CAPTURE this payment', 'woo-coolpay' ) . "\">" . sprintf( __( 'Capture Full Amount (%s)', 'woo-coolpay' ), $transaction->get_formatted_remaining_balance() ) . "</a></li>";
+							echo "<li class=\"cp-full-width\"><a class=\"button button-primary\" data-action=\"capture\" data-confirm=\"" . __( 'You are about to CAPTURE this payment', 'woo-coolpay' ) . "\">" . sprintf( __( 'Capture Full Amount (%s)', 'woo-coolpay' ), $transaction->get_formatted_remaining_balance() ) . "</a></li>";
 						}
 
-						printf( "<li class=\"qp-balance\"><span class=\"qp-balance__label\">%s:</span><span class=\"qp-balance__amount\"><span class='qp-balance__currency'>%s</span>%s</span></li>", __( 'Remaining balance', 'woo-coolpay' ), $transaction->get_currency(), $transaction->get_formatted_remaining_balance() );
-						printf( "<li class=\"qp-balance last\"><span class=\"qp-balance__label\">%s:</span><span class=\"qp-balance__amount\"><span class='qp-balance__currency'>%s</span><input id='qp-balance__amount-field' type='text' value='%s' /></span></li>", __( 'Capture amount', 'woo-coolpay' ), $transaction->get_currency(), $transaction->get_formatted_remaining_balance() );
+						printf( "<li class=\"cp-balance\"><span class=\"cp-balance__label\">%s:</span><span class=\"cp-balance__amount\"><span class='cp-balance__currency'>%s</span>%s</span></li>", __( 'Remaining balance', 'woo-coolpay' ), $transaction->get_currency(), $transaction->get_formatted_remaining_balance() );
+						printf( "<li class=\"cp-balance last\"><span class=\"cp-balance__label\">%s:</span><span class=\"cp-balance__amount\"><span class='cp-balance__currency'>%s</span><input id='cp-balance__amount-field' type='text' value='%s' /></span></li>", __( 'Capture amount', 'woo-coolpay' ), $transaction->get_currency(), $transaction->get_formatted_remaining_balance() );
 
 						if ( $transaction->is_action_allowed( 'capture' ) ) {
-							echo "<li class=\"qp-full-width\"><a class=\"button\" data-action=\"captureAmount\" data-confirm=\"" . __( 'You are about to CAPTURE this payment', 'woo-coolpay' ) . "\">" . __( 'Capture Specified Amount', 'woo-coolpay' ) . "</a></li>";
+							echo "<li class=\"cp-full-width\"><a class=\"button\" data-action=\"captureAmount\" data-confirm=\"" . __( 'You are about to CAPTURE this payment', 'woo-coolpay' ) . "\">" . __( 'Capture Specified Amount', 'woo-coolpay' ) . "</a></li>";
 						}
 
 
 						if ( $transaction->is_action_allowed( 'cancel' ) ) {
-							echo "<li class=\"qp-full-width\"><a class=\"button\" data-action=\"cancel\" data-confirm=\"" . __( 'You are about to CANCEL this payment', 'woo-coolpay' ) . "\">" . __( 'Cancel', 'woo-coolpay' ) . "</a></li>";
+							echo "<li class=\"cp-full-width\"><a class=\"button\" data-action=\"cancel\" data-confirm=\"" . __( 'You are about to CANCEL this payment', 'woo-coolpay' ) . "\">" . __( 'Cancel', 'woo-coolpay' ) . "</a></li>";
 						}
 
 						echo "</ul>";
 					}
 
-					printf( '<p><small><strong>%s:</strong> %d <span class="qp-meta-card"><img src="%s" /></span></small>', __( 'Transaction ID', 'woo-coolpay' ), $transaction_id, WC_Coolpay_Helper::get_payment_type_logo( $transaction->get_brand() ) );
+					printf( '<p><small><strong>%s:</strong> %d <span class="cp-meta-card"><img src="%s" /></span></small>', __( 'Transaction ID', 'woo-coolpay' ), $transaction_id, WC_Coolpay_Helper::get_payment_type_logo( $transaction->get_brand() ) );
 
 					$transaction_order_id = $order->get_transaction_order_id();
 					if ( isset( $transaction_order_id ) && ! empty( $transaction_order_id ) ) {
@@ -1197,10 +1195,14 @@ function init_coolpay_gateway() {
 					}
 				} catch ( CoolPay_API_Exception $e ) {
 					$e->write_to_logs();
-					$e->write_standard_warning();
+					if ( $state !== 'initial' ) {
+						$e->write_standard_warning();
+					}
 				} catch ( CoolPay_Exception $e ) {
 					$e->write_to_logs();
-					$e->write_standard_warning();
+					if ( $state !== 'initial' ) {
+						$e->write_standard_warning();
+					}
 				}
 			}
 
@@ -1231,16 +1233,26 @@ function init_coolpay_gateway() {
 			$order = new WC_CoolPay_Order( $post->ID );
 
 			$transaction_id = $order->get_transaction_id();
+			$state          = null;
 			if ( $transaction_id && $order->has_coolpay_payment() ) {
 				try {
 
 					$transaction = new WC_CoolPay_API_Subscription();
 					$transaction->get( $transaction_id );
-					$status = $transaction->get_current_type() . ' (' . __( 'subscription', 'woo-coolpay' ) . ')';
+					$status = null;
+					$state  = $transaction->get_state();
+					try {
+						$status = $transaction->get_current_type() . ' (' . __( 'subscription', 'woo-coolpay' ) . ')';
+					} catch ( CoolPay_API_Exception $e ) {
+						if ( 'initial' !== $state ) {
+							throw new CoolPay_API_Exception( $e->getMessage() );
+						}
+						$status = $state;
+					}
 
 					echo "<p class=\"woocommerce-coolpay-{$status}\"><strong>" . __( 'Current payment state', 'woo-coolpay' ) . ": " . $status . "</strong></p>";
 
-					printf( '<p><small><strong>%s:</strong> %d <span class="qp-meta-card"><img src="%s" /></span></small>', __( 'Transaction ID', 'woo-coolpay' ), $transaction_id, WC_Coolpay_Helper::get_payment_type_logo( $transaction->get_brand() ) );
+					printf( '<p><small><strong>%s:</strong> %d <span class="cp-meta-card"><img src="%s" /></span></small>', __( 'Transaction ID', 'woo-coolpay' ), $transaction_id, WC_Coolpay_Helper::get_payment_type_logo( $transaction->get_brand() ) );
 
 					$transaction_order_id = $order->get_transaction_order_id();
 					if ( isset( $transaction_order_id ) && ! empty( $transaction_order_id ) ) {
@@ -1248,7 +1260,9 @@ function init_coolpay_gateway() {
 					}
 				} catch ( CoolPay_API_Exception $e ) {
 					$e->write_to_logs();
-					$e->write_standard_warning();
+					if ( 'initial' !== $state ) {
+						$e->write_standard_warning();
+					}
 				}
 			}
 		}
@@ -1525,7 +1539,7 @@ function init_coolpay_gateway() {
 		 * @return void
 		 */
 		public static function in_plugin_update_message( $args ) {
-			$transient_name = 'wcqp_upgrade_notice_' . $args['Version'];
+			$transient_name = 'wccp_upgrade_notice_' . $args['Version'];
 			if ( false === ( $upgrade_notice = get_transient( $transient_name ) ) ) {
 				$response = wp_remote_get( 'https://plugins.svn.wordpress.org/woocommerce-coolpay/trunk/README.txt' );
 
@@ -1551,14 +1565,14 @@ function init_coolpay_gateway() {
 		private static function parse_update_notice( $content ) {
 			// Output Upgrade Notice
 			$matches        = null;
-			$regexp         = '~==\s*Upgrade Notice\s*==\s*=\s*(.*)\s*=(.*)(=\s*' . preg_quote( WCQP_VERSION, '/' ) . '\s*=|$)~Uis';
+			$regexp         = '~==\s*Upgrade Notice\s*==\s*=\s*(.*)\s*=(.*)(=\s*' . preg_quote( WCCP_VERSION, '/' ) . '\s*=|$)~Uis';
 			$upgrade_notice = '';
 
 			if ( preg_match( $regexp, $content, $matches ) ) {
 				$version = trim( $matches[1] );
 				$notices = (array) preg_split( '~[\r\n]+~', trim( $matches[2] ) );
 
-				if ( version_compare( WCQP_VERSION, $version, '<' ) ) {
+				if ( version_compare( WCCP_VERSION, $version, '<' ) ) {
 
 					$upgrade_notice .= '<div class="wc_plugin_upgrade_notice">';
 
@@ -1592,13 +1606,13 @@ function init_coolpay_gateway() {
 	 *
 	 * @return WC_CoolPay
 	 */
-	function WC_QP() {
+	function WC_CP() {
 		return WC_CoolPay::get_instance();
 	}
 
 	// Instantiate
-	WC_QP();
-	WC_QP()->hooks_and_filters();
+	WC_CP();
+	WC_CP()->hooks_and_filters();
 
 	// Add the gateway to WooCommerce
 	function add_coolpay_gateway( $methods ) {
@@ -1619,7 +1633,7 @@ function init_coolpay_gateway() {
  * @param function - Do the installer/update logic.
  */
 register_activation_hook( __FILE__, function () {
-	require_once WCQP_PATH . 'classes/woocommerce-coolpay-install.php';
+	require_once WCCP_PATH . 'classes/woocommerce-coolpay-install.php';
 
 	// Run the installer on the first install.
 	if ( WC_CoolPay_Install::is_first_install() ) {

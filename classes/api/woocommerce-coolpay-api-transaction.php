@@ -9,7 +9,7 @@
  * @package        Woocommerce_CoolPay/Classes
  * @category       Class
  * @author         PerfectSolution
- * @docs        https://coolpay.com/docs/
+ * @docs        https://coolpay.com/docs/apidocs/
  */
 
 class WC_CoolPay_API_Transaction extends WC_CoolPay_API {
@@ -18,13 +18,6 @@ class WC_CoolPay_API_Transaction extends WC_CoolPay_API {
 	 * @var bool
 	 */
 	protected $loaded_from_cache = false;
-
-	/**
-	 * @return boolean
-	 */
-	public static function is_transaction_caching_enabled() {
-		return apply_filters( 'woocommerce_coolpay_transaction_cache_enabled', true );
-	}
 
 	/**
 	 * get_current_type function.
@@ -66,7 +59,11 @@ class WC_CoolPay_API_Transaction extends WC_CoolPay_API {
 
 		$last_operation = end( $successful_operations );
 
-		if ( $last_operation->pending == true ) {
+		if ( ! is_object( $last_operation ) ) {
+			throw new CoolPay_API_Exception( 'Malformed operation object' );
+		}
+
+		if ( $last_operation->pending === true ) {
 			$last_operation->type = __( 'Pending - check your CoolPay manager', 'woo-coolpay' );
 		}
 
@@ -104,11 +101,11 @@ class WC_CoolPay_API_Transaction extends WC_CoolPay_API {
 	 */
 	public function create( WC_CoolPay_Order $order ) {
 		$base_params = array(
-			'currency'      => WC_QP()->get_gateway_currency( $order ),
+			'currency'      => WC_CP()->get_gateway_currency( $order ),
 			'order_post_id' => $order->get_id(),
 		);
 
-		$text_on_statement = WC_QP()->s( 'coolpay_text_on_statement' );
+		$text_on_statement = WC_CP()->s( 'coolpay_text_on_statement' );
 		if ( ! empty( $text_on_statement ) ) {
 			$base_params['text_on_statement'] = $text_on_statement;
 		}
@@ -137,19 +134,19 @@ class WC_CoolPay_API_Transaction extends WC_CoolPay_API {
 	 * @throws CoolPay_API_Exception
 	 */
 	public function patch_link( $transaction_id, WC_CoolPay_Order $order ) {
-		$cardtypelock = WC_QP()->s( 'coolpay_cardtypelock' );
+		$cardtypelock = WC_CP()->s( 'coolpay_cardtypelock' );
 
 		$payment_method = strtolower( version_compare( WC_VERSION, '3.0', '<' ) ? $order->payment_method : $order->get_payment_method() );
 
 		$base_params = array(
-			'language'                     => WC_QP()->get_gateway_language(),
-			'currency'                     => WC_QP()->get_gateway_currency( $order ),
+			'language'                     => WC_CP()->get_gateway_language(),
+			'currency'                     => WC_CP()->get_gateway_currency( $order ),
 			'callbackurl'                  => WC_CoolPay_Helper::get_callback_url(),
 			'autocapture'                  => WC_CoolPay_Helper::option_is_enabled( $order->get_autocapture_setting() ),
-			'autofee'                      => WC_CoolPay_Helper::option_is_enabled( WC_QP()->s( 'coolpay_autofee' ) ),
+			'autofee'                      => WC_CoolPay_Helper::option_is_enabled( WC_CP()->s( 'coolpay_autofee' ) ),
 			'payment_methods'              => apply_filters( 'woocommerce_coolpay_cardtypelock_' . $payment_method, $cardtypelock, $payment_method ),
-			'branding_id'                  => WC_QP()->s( 'coolpay_branding_id' ),
-			'google_analytics_tracking_id' => WC_QP()->s( 'coolpay_google_analytics_tracking_id' ),
+			'branding_id'                  => WC_CP()->s( 'coolpay_branding_id' ),
+			'google_analytics_tracking_id' => WC_CP()->s( 'coolpay_google_analytics_tracking_id' ),
 			'customer_email'               => version_compare( WC_VERSION, '3.0', '<' ) ? $order->billing_email : $order->get_billing_email(),
 		);
 
@@ -349,7 +346,7 @@ class WC_CoolPay_API_Transaction extends WC_CoolPay_API {
 			throw new CoolPay_Exception( __( 'Transaction ID cannot be empty', 'woo-coolpay' ) );
 		}
 
-		if ( $is_caching_enabled && false !== ( $transient = get_transient( 'wcqp_transaction_' . $transaction_id ) ) ) {
+		if ( $is_caching_enabled && false !== ( $transient = get_transient( 'wccp_transaction_' . $transaction_id ) ) ) {
 			$this->loaded_from_cache = true;
 
 			return $this->resource_data = (object) json_decode( $transient );
@@ -357,11 +354,18 @@ class WC_CoolPay_API_Transaction extends WC_CoolPay_API {
 
 		$this->get( $transaction_id );
 
-		if ($is_caching_enabled) {
+		if ( $is_caching_enabled ) {
 			$this->cache_transaction();
 		}
 
 		return $this->resource_data;
+	}
+
+	/**
+	 * @return boolean
+	 */
+	public static function is_transaction_caching_enabled() {
+		return apply_filters( 'woocommerce_coolpay_transaction_cache_enabled', true );
 	}
 
 	/**
@@ -382,7 +386,7 @@ class WC_CoolPay_API_Transaction extends WC_CoolPay_API {
 		// Cache expiration in seconds
 		$expiration = apply_filters( 'woocommerce_coolpay_transaction_cache_expiration', 7 * DAY_IN_SECONDS );
 
-		return set_transient( 'wcqp_transaction_' . $this->resource_data->id, json_encode( $this->resource_data ), $expiration );
+		return set_transient( 'wccp_transaction_' . $this->resource_data->id, json_encode( $this->resource_data ), $expiration );
 	}
 
 	/**

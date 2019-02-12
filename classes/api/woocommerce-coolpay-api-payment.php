@@ -7,8 +7,8 @@
  * @package        Woocommerce_CoolPay/Classes
  * @category       Class
  * @author         PerfectSolution
- * @docs        https://coolpay.com/docs/
-  */
+ * @docs           https://coolpay.com/docs/apidocs/
+ */
 
 class WC_CoolPay_API_Payment extends WC_CoolPay_API_Transaction {
 

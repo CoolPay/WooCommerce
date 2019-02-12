@@ -9,7 +9,7 @@
  * @author 		PerfectSolution
  */
 
-class WC_CoolPay_Install
+class WC_CoolPay_Install 
 {
 	/**
 	 * Contains version numbers and the path to the update files.
@@ -28,7 +28,7 @@ class WC_CoolPay_Install
 	private static function update_db_version( $version = NULL )
 	{
 		delete_option( 'woocommerce_coolpay_version' );
-		add_option( 'woocommerce_coolpay_version', $version === NULL ? WCQP_VERSION : $version );
+		add_option( 'woocommerce_coolpay_version', $version === NULL ? WCCP_VERSION : $version );
 	}
 	
 	
@@ -39,7 +39,7 @@ class WC_CoolPay_Install
 	 */
 	public static function get_db_version() 
 	{
-		return get_option( 'woocommerce_coolpay_version', TRUE );
+		return get_option( 'woocommerce_coolpay_version', TRUE );	
 	}
 	
 	
@@ -50,7 +50,7 @@ class WC_CoolPay_Install
 	 */
 	public static function is_first_install() 
 	{
-		$settings = get_option( 'woocommerce_coolpay_settings', FALSE );
+		$settings = get_option( 'woocommerce_coolpay_settings', FALSE );	
 		return $settings === FALSE;
 	}
 	
@@ -81,7 +81,7 @@ class WC_CoolPay_Install
 			}
 		}
 		
-		self::update_db_version( WCQP_VERSION );
+		self::update_db_version( WCCP_VERSION );
 
         self::stop_maintenance_mode();
 	}

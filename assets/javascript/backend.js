@@ -28,7 +28,7 @@
 	CoolPay.prototype.captureAmount = function () {
 		var request = this.request({
 			coolpay_action: 'capture',
-			coolpay_amount: $('#qp-balance__amount-field').val()
+			coolpay_amount: $('#cp-balance__amount-field').val()
 		} );
 	};
 
@@ -118,14 +118,14 @@
 		new CoolPay().init();
 		new CoolPayCheckAPIStatus().init();
 
-        var emptyLogsButton = $('#wcqp_logs_clear');
+        var emptyLogsButton = $('#wccp_logs_clear');
         emptyLogsButton.on('click', function(e) {
         	e.preventDefault();
         	$.getJSON(ajaxurl, { action: 'coolpay_empty_logs' }, function (response) {
         		if (response.hasOwnProperty('status') && response.status == 'success') {
         			var message = $('<div id="message" class="updated"><p>' + response.message + '</p></div>');
         			message.hide();
-        			message.insertBefore($('#wcqp_wiki'));
+        			message.insertBefore($('#wccp_wiki'));
         			message.fadeIn('fast', function () {
         				setTimeout(function () {
         					message.fadeOut('fast', function () {
@@ -146,7 +146,7 @@
 
     function CoolPayCheckAPIStatus() {
     	this.apiSettingsField = $('#woocommerce_coolpay_coolpay_apikey');
-		this.indicator = $('<span class="wcqp_api_indicator"></span>');
+		this.indicator = $('<span class="wccp_api_indicator"></span>');
 	}
 
 })(jQuery);

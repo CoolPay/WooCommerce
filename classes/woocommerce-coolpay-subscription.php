@@ -62,7 +62,7 @@ class WC_CoolPay_Subscription {
         // Complete payment
         $order->payment_complete( $recurring_response->id );
 
-        $autocomplete_renewal_orders = WC_QP()->s('subscription_autocomplete_renewal_orders');
+        $autocomplete_renewal_orders = WC_CP()->s('subscription_autocomplete_renewal_orders');
 
         if (WC_CoolPay_Helper::option_is_enabled($autocomplete_renewal_orders)) {
         	$order->update_status( 'completed', __( 'Automatically completing order status due to succesful recurring payment', 'woo-coolpay' ), false );

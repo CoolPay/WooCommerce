@@ -7,7 +7,7 @@
  * @package		Woocommerce_CoolPay/Classes
  * @category	Class
  * @author 		PerfectSolution
- * @docs        https://coolpay.com/docs/
+ * @docs        https://coolpay.com/docs/apidocs/
  */
 
 class WC_CoolPay_API
@@ -55,7 +55,7 @@ class WC_CoolPay_API
         add_action('shutdown', array($this, 'shutdown'));
 
         if (empty($api_key)) {
-            $this->api_key = WC_QP()->s( 'coolpay_apikey' );
+            $this->api_key = WC_CP()->s( 'coolpay_apikey' );
         } else {
             $this->api_key = $api_key;
         }
@@ -78,12 +78,12 @@ class WC_CoolPay_API
 	 */
     public function is_authorized_callback( $response_body )
     {
-        if( ! isset( $_SERVER["HTTP_COOLPAY_CHECKSUM_SHA256"] ) )
+        if( ! isset( $_SERVER["HTTP_QUICKPAY_CHECKSUM_SHA256"] ) )
         {
             return FALSE;
         }
 
-        return hash_hmac( 'sha256', $response_body, WC_QP()->s( 'coolpay_privatekey' ) ) == $_SERVER["HTTP_COOLPAY_CHECKSUM_SHA256"];
+        return hash_hmac( 'sha256', $response_body, WC_CP()->s( 'coolpay_privatekey' ) ) == $_SERVER["HTTP_QUICKPAY_CHECKSUM_SHA256"];
     }
 
 
@@ -304,7 +304,7 @@ class WC_CoolPay_API
             	'Authorization: Basic ' . base64_encode(':' . $this->api_key ),
                 'Accept-Version: v10',
                 'Accept: application/json',
-                'CoolPay-Callback-Url: ' . (!$this->block_callback) ? WC_CoolPay_Helper::get_callback_url( $post_id ) : NULL
+                'QuickPay-Callback-Url: ' . (!$this->block_callback) ? WC_CoolPay_Helper::get_callback_url( $post_id ) : NULL
             ));
 		}
 

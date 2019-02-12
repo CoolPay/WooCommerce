@@ -53,7 +53,7 @@ class WC_CoolPay_Instance extends WC_CoolPay {
             'tab' => 'checkout',
             'section' => 'wc_coolpay'
         );
-        echo "<h3>CoolPay - {$this->id}, v" . WCQP_VERSION . "</h3>";
+        echo "<h3>CoolPay - {$this->id}, v" . WCCP_VERSION . "</h3>";
         echo "<p>" . sprintf(__('Allows you to receive payments via CoolPay %s.', 'woo-coolpay'), $this->id) . "</p>";
         echo "<p>" . sprintf(__('This module has it\'s main configuration inside the \'CoolPay\' tab.', 'woo-coolpay'), 's') . "</p>";
         echo "<p>" . sprintf(__('Click <a href="%s">here</a> to access the main configuration.', 'woo-coolpay'), add_query_arg( $main_settings_args, admin_url('admin.php'))) . "</p>";

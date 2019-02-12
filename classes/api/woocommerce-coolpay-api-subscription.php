@@ -7,8 +7,8 @@
  * @package		Woocommerce_CoolPay/Classes
  * @category	Class
  * @author 		PerfectSolution
- * @docs        https://coolpay.com/docs/
-  */
+ * @docs        https://coolpay.com/docs/apidocs/
+ */
 
 class WC_CoolPay_API_Subscription extends WC_CoolPay_API_Transaction
 {
@@ -83,8 +83,8 @@ class WC_CoolPay_API_Subscription extends WC_CoolPay_API_Transaction
             'amount' => WC_CoolPay_Helper::price_multiply( $amount ),
             'order_id' => sprintf('%s', $order_number ),
             'auto_capture' => $order->get_autocapture_setting(),
-            'autofee' => WC_CoolPay_Helper::option_is_enabled( WC_QP()->s( 'coolpay_autofee' ) ),
-            'text_on_statement' => WC_QP()->s('coolpay_text_on_statement'),
+            'autofee' => WC_CoolPay_Helper::option_is_enabled( WC_CP()->s( 'coolpay_autofee' ) ),
+            'text_on_statement' => WC_CP()->s('coolpay_text_on_statement'),
             'order_post_id' => $order->get_id(),
         ), TRUE );
 
@@ -108,14 +108,18 @@ class WC_CoolPay_API_Subscription extends WC_CoolPay_API_Transaction
     }
 
 
-    /**
-    * is_action_allowed function.
-    *
-    * Check if the action we are about to perform is allowed according to the current transaction state.
-    *
-    * @access public
-    * @return boolean
-    */
+	/**
+	 * is_action_allowed function.
+	 *
+	 * Check if the action we are about to perform is allowed according to the current transaction state.
+	 *
+	 * @access public
+	 *
+	 * @param $action
+	 *
+	 * @return boolean
+	 * @throws CoolPay_API_Exception
+	 */
     public function is_action_allowed( $action )
     {
         $state = $this->get_current_type();

@@ -25,7 +25,7 @@ class WC_CoolPay_Settings {
 				'enabled' => array(
                     'title' => __( 'Enable', 'woo-coolpay' ),
                     'type' => 'checkbox', 
-                    'label' => __( 'Enable CoolPay Payment', 'woo-coolpay' ),
+                    'label' => __( 'Enable CoolPay Payment', 'woo-coolpay' ), 
                     'default' => 'yes'
                 ), 
 
@@ -51,18 +51,18 @@ class WC_CoolPay_Settings {
 					'title' => __('Autocapture settings', 'woo-coolpay' )
 				),
 					'coolpay_autocapture' => array(
-                        'title' => __( 'Physical products (default)', 'woo-coolpay' ),
+                        'title' => __( 'Physical products (default)', 'woo-coolpay' ), 
                         'type' => 'checkbox', 
                         'label' => __( 'Enable', 'woo-coolpay' ),
-                        'description' => __( 'Automatically capture payments on physical products.', 'woo-coolpay' ),
+                        'description' => __( 'Automatically capture payments on physical products.', 'woo-coolpay' ), 
                         'default' => 'no',
                         'desc_tip' => false,
 					),
 					'coolpay_autocapture_virtual' => array(
-                        'title' => __( 'Virtual products', 'woo-coolpay' ),
+                        'title' => __( 'Virtual products', 'woo-coolpay' ), 
                         'type' => 'checkbox', 
                         'label' => __( 'Enable', 'woo-coolpay' ),
-                        'description' => __( 'Automatically capture payments on virtual products. If the order contains both physical and virtual products, this setting will be overwritten by the default setting above.', 'woo-coolpay' ),
+                        'description' => __( 'Automatically capture payments on virtual products. If the order contains both physical and virtual products, this setting will be overwritten by the default setting above.', 'woo-coolpay' ), 
                         'default' => 'no',
                         'desc_tip' => false,
 					),
@@ -85,10 +85,10 @@ class WC_CoolPay_Settings {
                         )
                     ),
                     'coolpay_currency_auto' => array(
-                        'title' => __( 'Auto Currency', 'woo-coolpay' ),
+                        'title' => __( 'Auto Currency', 'woo-coolpay' ), 
                         'type' => 'checkbox', 
                         'label' => __( 'Enable', 'woo-coolpay' ),
-                        'description' => __( 'Automatically checks out with the order currency. This setting overwrites the "Fixed Currency" setting.', 'woo-coolpay' ),
+                        'description' => __( 'Automatically checks out with the order currency. This setting overwrites the "Fixed Currency" setting.', 'woo-coolpay' ), 
                         'default' => 'no',
                         'desc_tip' => true,
                     ),
@@ -128,39 +128,39 @@ class WC_CoolPay_Settings {
                         )
 					),
 					'coolpay_cardtypelock' => array(
-                        'title' => __( 'Payment methods', 'woo-coolpay' ),
+                        'title' => __( 'Payment methods', 'woo-coolpay' ), 
                         'type' => 'text', 
-                        'description' => __( 'Default: creditcard. Type in the cards you wish to accept (comma separated). See the valid payment types here: <b>https://coolpay.com/docs/payment-methods/</b>', 'woo-coolpay' ),
+                        'description' => __( 'Default: creditcard. Type in the cards you wish to accept (comma separated).<br>For example you want to accept all credit cards but NOT JCB and Visa cards issued in USA:<code>creditcard, !jcb, !visa-us</code>.<br> See the valid payment types here: <b><a target="_blank" href="https://coolpay.com/docs/payment-methods/">https://coolpay.com/docs/payment-methods/</a></b>', 'woo-coolpay' ), 
                         'default' => 'creditcard',
 					),
 					'coolpay_branding_id' => array(
-                        'title' => __( 'Branding ID', 'woo-coolpay' ),
+                        'title' => __( 'Branding ID', 'woo-coolpay' ), 
                         'type' => 'text', 
-                        'description' => __( 'Leave empty if you have no custom branding options', 'woo-coolpay' ),
+                        'description' => __( 'Leave empty if you have no custom branding options', 'woo-coolpay' ), 
                         'default' => '',
                         'desc_tip' => true,
 					),	
 
 					'coolpay_autofee' => array(
-                        'title' => __( 'Enable autofee', 'woo-coolpay' ),
+                        'title' => __( 'Enable autofee', 'woo-coolpay' ), 
                         'type' => 'checkbox', 
                         'label' => __( 'Enable', 'woo-coolpay' ),
-                        'description' => __( 'If enabled, the fee charged by the acquirer will be calculated and added to the transaction amount.', 'woo-coolpay' ),
+                        'description' => __( 'If enabled, the fee charged by the acquirer will be calculated and added to the transaction amount.', 'woo-coolpay' ), 
                         'default' => 'no',
                         'desc_tip' => true,
 					),        
 					'coolpay_captureoncomplete' => array(
-                        'title' => __( 'Capture on complete', 'woo-coolpay' ),
+                        'title' => __( 'Capture on complete', 'woo-coolpay' ), 
                         'type' => 'checkbox', 
                         'label' => __( 'Enable', 'woo-coolpay' ),
-                        'description' => __( 'When enabled coolpay payments will automatically be captured when order state is set to "Complete".', 'woo-coolpay'),
+                        'description' => __( 'When enabled coolpay payments will automatically be captured when order state is set to "Complete".', 'woo-coolpay'), 
                         'default' => 'no',
                         'desc_tip' => true,
 					),
                     'coolpay_text_on_statement' => array(
-                        'title' => __( 'Text on statement', 'woo-coolpay' ),
+                        'title' => __( 'Text on statement', 'woo-coolpay' ), 
                         'type' => 'text', 
-                        'description' => __( 'Text that will be placed on cardholder’s bank statement (currently only supported by Clearhaus).', 'woo-coolpay' ),
+                        'description' => __( 'Text that will be placed on cardholder’s bank statement (currently only supported by Clearhaus).', 'woo-coolpay' ), 
                         'default' => '',
                         'desc_tip' => true,
                         'custom_attributes' => array(
@@ -174,23 +174,23 @@ class WC_CoolPay_Settings {
 					'title' => __( 'Shop setup', 'woo-coolpay' ),
 				),
 					'title' => array(
-                        'title' => __( 'Title', 'woo-coolpay' ),
+                        'title' => __( 'Title', 'woo-coolpay' ), 
                         'type' => 'text', 
-                        'description' => __( 'This controls the title which the user sees during checkout.', 'woo-coolpay' ),
+                        'description' => __( 'This controls the title which the user sees during checkout.', 'woo-coolpay' ), 
                         'default' => __( 'CoolPay', 'woo-coolpay' ),
                         'desc_tip' => true,
                     ),
 					'description' => array(
-                        'title' => __( 'Customer Message', 'woo-coolpay' ),
+                        'title' => __( 'Customer Message', 'woo-coolpay' ), 
                         'type' => 'textarea', 
-                        'description' => __( 'This controls the description which the user sees during checkout.', 'woo-coolpay' ),
+                        'description' => __( 'This controls the description which the user sees during checkout.', 'woo-coolpay' ), 
                         'default' => __( 'Pay via CoolPay. Allows you to pay with your credit card via CoolPay.', 'woo-coolpay' ),
                         'desc_tip' => true,
                     ),
 					'checkout_button_text' => array(
-                        'title' => __( 'Order button text', 'woo-coolpay' ),
+                        'title' => __( 'Order button text', 'woo-coolpay' ), 
                         'type' => 'text', 
-                        'description' => __( 'Text shown on the submit button when choosing payment method.', 'woo-coolpay' ),
+                        'description' => __( 'Text shown on the submit button when choosing payment method.', 'woo-coolpay' ), 
                         'default' => __( 'Go to payment', 'woo-coolpay' ),
                         'desc_tip' => true,
                     ),
@@ -252,9 +252,9 @@ class WC_CoolPay_Settings {
 					'title' => __( 'Google Analytics', 'woo-coolpay' ),
 				),
 					'coolpay_google_analytics_tracking_id' => array(
-                        'title' => __( 'Tracking ID', 'woo-coolpay' ),
+                        'title' => __( 'Tracking ID', 'woo-coolpay' ), 
                         'type' => 'text', 
-                        'description' => __( 'Your Google Analytics tracking ID. Digits only.', 'woo-coolpay' ),
+                        'description' => __( 'Your Google Analytics tracking ID. Digits only.', 'woo-coolpay' ), 
                         'default' => '',
                         'desc_tip' => true,
                     ),
@@ -323,7 +323,7 @@ class WC_CoolPay_Settings {
     private static function custom_variable_options()
     {
         $options = array(
-            'billing_all_data'      => __( 'Billing: Complete Customer Details', 'woo-coolpay' ),
+            'billing_all_data'      => __( 'Billing: Complete Customer Details', 'woo-coolpay' ), 
             'browser_useragent'     => __( 'Browser: User Agent', 'woo-coolpay' ),
             'customer_email'        => __( 'Customer: Email Address', 'woo-coolpay' ),
             'customer_phone'        => __( 'Customer: Phone Number', 'woo-coolpay' ),
@@ -343,9 +343,9 @@ class WC_CoolPay_Settings {
      */
     public static function clear_logs_section() {
         printf( '<h3 class="wc-settings-sub-title">%s</h3>', __( 'Debug', 'woo-coolpay' ) );
-        printf( '<a id="wcqp_wiki" class="button button-primary" href="%s" target="_blank">%s</a>', self::get_wiki_link(), __( 'Got problems? Check out the Wiki.', 'woo-coolpay' ) );
-        printf( '<a id="wcqp_logs" class="button" href="%s">%s</a>', WC_QP()->log->get_admin_link(), __( 'View debug logs', 'woo-coolpay' ) );
-        printf( '<button id="wcqp_logs_clear" class="button">%s</button>', __( 'Empty debug logs', 'woo-coolpay' ) );
+        printf( '<a id="wccp_wiki" class="button button-primary" href="%s" target="_blank">%s</a>', self::get_wiki_link(), __( 'Got problems? Check out the Wiki.', 'woo-coolpay' ) );
+        printf( '<a id="wccp_logs" class="button" href="%s">%s</a>', WC_CP()->log->get_admin_link(), __( 'View debug logs', 'woo-coolpay' ) );
+        printf( '<button id="wccp_logs_clear" class="button">%s</button>', __( 'Empty debug logs', 'woo-coolpay' ) );
         printf( '<br/>');
         printf( '<h3 class="wc-settings-sub-title">%s</h3>', __( 'Enable', 'woo-coolpay' ) );
     }
@@ -396,7 +396,7 @@ class WC_CoolPay_Settings {
      * @return string
      */
     public static function get_wiki_link() {
-        return 'http://coolpay.perfect-solution.dk';
+        return 'https://coolpay.com/docs';
     }
 
     /**
@@ -406,7 +406,7 @@ class WC_CoolPay_Settings {
      */
     private static function has_empty_mandatory_post_fields($settings_field) {
         $post_key = 'woocommerce_coolpay_' . $settings_field;
-        $setting_key = WC_QP()->s($settings_field);
+        $setting_key = WC_CP()->s($settings_field);
         return empty($_POST[$post_key]) && empty($setting_key);
 
     }

@@ -35,7 +35,7 @@ class WC_CoolPay_ViaBill extends WC_CoolPay_Instance {
             'enabled' => array(
                 'title' => __( 'Enable', 'woo-coolpay' ),
                 'type' => 'checkbox', 
-                'label' => __( 'Enable ViaBill payment', 'woo-coolpay' ),
+                'label' => __( 'Enable ViaBill payment', 'woo-coolpay' ), 
                 'default' => 'no'
             ), 
             '_Shop_setup' => array(
@@ -43,15 +43,15 @@ class WC_CoolPay_ViaBill extends WC_CoolPay_Instance {
                 'title' => __( 'Shop setup', 'woo-coolpay' ),
             ),
                 'title' => array(
-                    'title' => __( 'Title', 'woo-coolpay' ),
+                    'title' => __( 'Title', 'woo-coolpay' ), 
                     'type' => 'text', 
-                    'description' => __( 'This controls the title which the user sees during checkout.', 'woo-coolpay' ),
+                    'description' => __( 'This controls the title which the user sees during checkout.', 'woo-coolpay' ), 
                     'default' => __('ViaBill', 'woo-coolpay')
                 ),
                 'description' => array(
-                    'title' => __( 'Customer Message', 'woo-coolpay' ),
+                    'title' => __( 'Customer Message', 'woo-coolpay' ), 
                     'type' => 'textarea', 
-                    'description' => __( 'This controls the description which the user sees during checkout.', 'woo-coolpay' ),
+                    'description' => __( 'This controls the description which the user sees during checkout.', 'woo-coolpay' ), 
                     'default' => __('Pay with ViaBill', 'woo-coolpay')
                 ),
         );

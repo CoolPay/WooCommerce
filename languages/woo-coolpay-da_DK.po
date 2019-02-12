@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce CoolPay\n"
-"POT-Creation-Date: 2018-11-09 11:38+0100\n"
-"PO-Revision-Date: 2018-11-09 11:42+0100\n"
+"POT-Creation-Date: 2018-11-08 15:17+0100\n"
+"PO-Revision-Date: 2018-11-08 15:18+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: da_DK\n"
@@ -20,123 +20,61 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: classes/api/woocommerce-coolpay-api-transaction.php:70
+#: classes/api/woocommerce-coolpay-api-transaction.php:67
 msgid "Pending - check your CoolPay manager"
 msgstr "Afventer - kontrollér din CoolPay Manager for mere information"
 
-#: classes/api/woocommerce-coolpay-api-transaction.php:349
+#: classes/api/woocommerce-coolpay-api-transaction.php:346
 msgid "Transaction ID cannot be empty"
 msgstr "Transaktions ID’et må ikke være tomt"
 
-#: classes/base/woocommerce-coolpay-base-order.php:176
-msgid "Payment Fee"
-msgstr "Betalingsgebyr"
+#: classes/emails/woocommerce-coolpay-payment-link-email.php:13
+msgid "Payment link created"
+msgstr "Betalingslink oprettet"
 
-#: classes/base/woocommerce-coolpay-base-order.php:593
-msgid "Customer Email"
-msgstr "Kunde Email"
-
-#: classes/base/woocommerce-coolpay-base-order.php:598
-msgid "Customer Phone"
-msgstr "Kunde Telefon"
-
-#: classes/base/woocommerce-coolpay-base-order.php:603
-msgid "User Agent"
-msgstr "User Agent"
-
-#: classes/base/woocommerce-coolpay-base-order.php:608
-msgid "Shipping Method"
-msgstr "Leveringsmetode"
-
-#: classes/instances/bitcoin.php:36 classes/instances/ideal.php:36
-#: classes/instances/klarna.php:36 classes/instances/mobilepay.php:36
-#: classes/instances/paypal.php:36 classes/instances/paysafecard.php:36
-#: classes/instances/sofort.php:36 classes/instances/swish.php:36
-#: classes/instances/trustly.php:36 classes/instances/viabill.php:36
-#: classes/instances/vipps.php:36 classes/woocommerce-coolpay-settings.php:26
-#: classes/woocommerce-coolpay-settings.php:56
-#: classes/woocommerce-coolpay-settings.php:64
-#: classes/woocommerce-coolpay-settings.php:90
-#: classes/woocommerce-coolpay-settings.php:147
-#: classes/woocommerce-coolpay-settings.php:155
-#: classes/woocommerce-coolpay-settings.php:269
-#: classes/woocommerce-coolpay-settings.php:304
-#: classes/woocommerce-coolpay-settings.php:350
-msgid "Enable"
-msgstr "Aktiver"
-
-#: classes/instances/bitcoin.php:38
-msgid "Enable Bitcoin payment"
-msgstr "Aktiver betalinger med Bitcoin"
-
-#: classes/instances/bitcoin.php:43 classes/instances/ideal.php:43
-#: classes/instances/klarna.php:43 classes/instances/mobilepay.php:43
-#: classes/instances/paypal.php:43 classes/instances/paysafecard.php:43
-#: classes/instances/sofort.php:43 classes/instances/swish.php:43
-#: classes/instances/trustly.php:43 classes/instances/viabill.php:43
-#: classes/instances/vipps.php:43 classes/woocommerce-coolpay-settings.php:174
-msgid "Shop setup"
-msgstr "Shop-indstillinger"
-
-#: classes/instances/bitcoin.php:46 classes/instances/ideal.php:46
-#: classes/instances/klarna.php:46 classes/instances/mobilepay.php:46
-#: classes/instances/paypal.php:46 classes/instances/paysafecard.php:46
-#: classes/instances/sofort.php:46 classes/instances/swish.php:46
-#: classes/instances/trustly.php:46 classes/instances/viabill.php:46
-#: classes/instances/vipps.php:46 classes/woocommerce-coolpay-settings.php:177
-msgid "Title"
-msgstr "Titel"
-
-#: classes/instances/bitcoin.php:48 classes/instances/ideal.php:48
-#: classes/instances/klarna.php:48 classes/instances/mobilepay.php:48
-#: classes/instances/paypal.php:48 classes/instances/paysafecard.php:48
-#: classes/instances/sofort.php:48 classes/instances/swish.php:48
-#: classes/instances/trustly.php:48 classes/instances/viabill.php:48
-#: classes/instances/vipps.php:48 classes/woocommerce-coolpay-settings.php:179
-msgid "This controls the title which the user sees during checkout."
+#: classes/emails/woocommerce-coolpay-payment-link-email.php:14
+msgid "This e-mail is sent upon manual payment link creation by a shop admin."
 msgstr ""
-"Tekst der vises som navn på betalingsmetoden, når dine kunder vælger CoolPay "
-"i checkout-processen."
+"Denne email sendes, når en shop-administrator manuelt opretter et "
+"betalingslink."
 
-#: classes/instances/bitcoin.php:49
-msgid "Bitcoin"
-msgstr "Bitcoin"
+#: classes/emails/woocommerce-coolpay-payment-link-email.php:93
+msgid "Enable/Disable"
+msgstr "Aktiver/Deaktiver"
 
-#: classes/instances/bitcoin.php:52 classes/instances/ideal.php:52
-#: classes/instances/klarna.php:52 classes/instances/mobilepay.php:52
-#: classes/instances/paypal.php:52 classes/instances/paysafecard.php:52
-#: classes/instances/sofort.php:52 classes/instances/swish.php:52
-#: classes/instances/trustly.php:52 classes/instances/viabill.php:52
-#: classes/instances/vipps.php:52 classes/woocommerce-coolpay-settings.php:184
-msgid "Customer Message"
-msgstr "Besked til kunde"
+#: classes/emails/woocommerce-coolpay-payment-link-email.php:95
+msgid "Enable this email notification"
+msgstr "Aktiver denne email-notifikation"
 
-#: classes/instances/bitcoin.php:54 classes/instances/ideal.php:54
-#: classes/instances/klarna.php:54 classes/instances/mobilepay.php:54
-#: classes/instances/paypal.php:54 classes/instances/paysafecard.php:54
-#: classes/instances/sofort.php:54 classes/instances/swish.php:54
-#: classes/instances/trustly.php:54 classes/instances/viabill.php:54
-#: classes/instances/vipps.php:54 classes/woocommerce-coolpay-settings.php:186
-msgid "This controls the description which the user sees during checkout."
-msgstr ""
-"Dette styrer hvilken betalingsmetodebeskrivelse, der skal vises til dine "
-"kunder under checkout-processen."
+#: classes/emails/woocommerce-coolpay-payment-link-email.php:99
+msgid "Subject"
+msgstr "Emne"
 
-#: classes/instances/bitcoin.php:55
-msgid "Pay with Bitcoin"
-msgstr "Betal med Bitcoin"
+#: classes/emails/woocommerce-coolpay-payment-link-email.php:103
+#: classes/emails/woocommerce-coolpay-payment-link-email.php:112
+#, php-format
+msgid "Available placeholders: %s"
+msgstr "Tilgængelige placeholders: %s"
 
-#: classes/instances/ideal.php:38
-msgid "Enable iDEAL payment"
-msgstr "Aktiver betalinger med iDEAL"
+#: classes/emails/woocommerce-coolpay-payment-link-email.php:108
+msgid "Email heading"
+msgstr "Email overskrift"
 
-#: classes/instances/ideal.php:49
-msgid "iDEAL"
-msgstr "iDEAL"
+#: classes/emails/woocommerce-coolpay-payment-link-email.php:117
+msgid "Email type"
+msgstr "Email-type"
 
-#: classes/instances/ideal.php:55
-msgid "Pay with iDEAL"
-msgstr "Betal med iDEAL"
+#: classes/emails/woocommerce-coolpay-payment-link-email.php:119
+msgid "Choose which format of email to send."
+msgstr "Vælg ville format mailen skal sendes i."
+
+#: classes/emails/woocommerce-coolpay-payment-link-email.php:135
+msgid "Payment link for your order ({order_number})"
+msgstr "Link til betaling af din ordre ({order_number})"
+
+#: classes/emails/woocommerce-coolpay-payment-link-email.php:145
+msgid "This is your payment link"
+msgstr "Dette er dit betalingslink"
 
 #: classes/instances/instance.php:57
 #, php-format
@@ -152,13 +90,61 @@ msgstr "Dette moduls primære konfiguration ligger under fanen 'CoolPay'."
 msgid "Click <a href=\"%s\">here</a> to access the main configuration."
 msgstr "Klik <a href=\"%s\">her</a> for at tilgå den primære konfiguration."
 
+#: classes/instances/klarna.php:36 classes/instances/mobilepay.php:36
+#: classes/instances/sofort.php:36 classes/instances/viabill.php:36
+#: classes/woocommerce-coolpay-settings.php:26
+#: classes/woocommerce-coolpay-settings.php:56
+#: classes/woocommerce-coolpay-settings.php:64
+#: classes/woocommerce-coolpay-settings.php:90
+#: classes/woocommerce-coolpay-settings.php:147
+#: classes/woocommerce-coolpay-settings.php:155
+#: classes/woocommerce-coolpay-settings.php:269
+#: classes/woocommerce-coolpay-settings.php:304
+#: classes/woocommerce-coolpay-settings.php:350
+msgid "Enable"
+msgstr "Aktiver"
+
 #: classes/instances/klarna.php:38
 msgid "Enable Klarna payment"
 msgstr "Aktiver betalinger med Klarna"
 
+#: classes/instances/klarna.php:43 classes/instances/mobilepay.php:43
+#: classes/instances/sofort.php:43 classes/instances/viabill.php:43
+#: classes/woocommerce-coolpay-settings.php:174
+msgid "Shop setup"
+msgstr "Shop-indstillinger"
+
+#: classes/instances/klarna.php:46 classes/instances/mobilepay.php:46
+#: classes/instances/sofort.php:46 classes/instances/viabill.php:46
+#: classes/woocommerce-coolpay-settings.php:177
+msgid "Title"
+msgstr "Titel"
+
+#: classes/instances/klarna.php:48 classes/instances/mobilepay.php:48
+#: classes/instances/sofort.php:48 classes/instances/viabill.php:48
+#: classes/woocommerce-coolpay-settings.php:179
+msgid "This controls the title which the user sees during checkout."
+msgstr ""
+"Tekst der vises som navn på betalingsmetoden, når dine kunder vælger "
+"CoolPay i checkout-processen."
+
 #: classes/instances/klarna.php:49
 msgid "Klarna"
 msgstr "Klarna"
+
+#: classes/instances/klarna.php:52 classes/instances/mobilepay.php:52
+#: classes/instances/sofort.php:52 classes/instances/viabill.php:52
+#: classes/woocommerce-coolpay-settings.php:184
+msgid "Customer Message"
+msgstr "Besked til kunde"
+
+#: classes/instances/klarna.php:54 classes/instances/mobilepay.php:54
+#: classes/instances/sofort.php:54 classes/instances/viabill.php:54
+#: classes/woocommerce-coolpay-settings.php:186
+msgid "This controls the description which the user sees during checkout."
+msgstr ""
+"Dette styrer hvilken betalingsmetodebeskrivelse, der skal vises til dine "
+"kunder under checkout-processen."
 
 #: classes/instances/klarna.php:55
 msgid "Pay with Klarna"
@@ -172,33 +158,9 @@ msgstr "Aktiver betalinger med MobilePay"
 msgid "MobilePay"
 msgstr "MobilePay"
 
-#: classes/instances/mobilepay.php:55
+#: classes/instances/mobilepay.php:55 classes/instances/sofort.php:55
 msgid "Pay with your mobile phone"
 msgstr "Betal med din mobil"
-
-#: classes/instances/paypal.php:38
-msgid "Enable PayPal payment"
-msgstr "Aktiver betalinger med PayPal"
-
-#: classes/instances/paypal.php:49
-msgid "PayPal"
-msgstr "PayPal"
-
-#: classes/instances/paypal.php:55
-msgid "Pay with PayPal"
-msgstr "Betal med PayPal"
-
-#: classes/instances/paysafecard.php:38
-msgid "Enable paysafecard payment"
-msgstr "Aktiver betalinger med paysafecard"
-
-#: classes/instances/paysafecard.php:49
-msgid "paysafecard"
-msgstr "paysafecard"
-
-#: classes/instances/paysafecard.php:55
-msgid "Pay with paysafecard"
-msgstr "Betal med paysafecard"
 
 #: classes/instances/sofort.php:38
 msgid "Enable Sofort payment"
@@ -207,34 +169,6 @@ msgstr "Aktiver betalinger med Sofort"
 #: classes/instances/sofort.php:49
 msgid "Sofort"
 msgstr "Sofort"
-
-#: classes/instances/sofort.php:55
-msgid "Pay with Sofort"
-msgstr "Betal med Sofort"
-
-#: classes/instances/swish.php:38
-msgid "Enable Swish payment"
-msgstr "Aktiver betalinger med Swish"
-
-#: classes/instances/swish.php:49
-msgid "Swish"
-msgstr "Swish"
-
-#: classes/instances/swish.php:55
-msgid "Pay with Swish"
-msgstr "Betal med Swish"
-
-#: classes/instances/trustly.php:38
-msgid "Enable Trustly payment"
-msgstr "Aktiver betalinger med Trustly"
-
-#: classes/instances/trustly.php:49
-msgid "Bank Payment with Trustly"
-msgstr "Bank betalinger med Trustly"
-
-#: classes/instances/trustly.php:55
-msgid "Pay with Trustly - Bank payment"
-msgstr "Betal med Trustly - Bank betalning"
 
 #: classes/instances/viabill.php:38
 msgid "Enable ViaBill payment"
@@ -248,17 +182,44 @@ msgstr "ViaBill"
 msgid "Pay with ViaBill"
 msgstr "Betal med ViaBill"
 
-#: classes/instances/vipps.php:38
-msgid "Enable Vipps payment"
-msgstr "Aktiver betalinger med Vipps"
+#: classes/modules/woocommerce-coolpay-admin-orders.php:46
+#, php-format
+msgid "Payment links created for %d orders."
+msgstr "Betalingslinks blev oprettet for %d ordrer."
 
-#: classes/instances/vipps.php:49
-msgid "Vipps"
-msgstr "Vipps"
+#: classes/modules/woocommerce-coolpay-admin-orders.php:78
+#, php-format
+msgid "Payment links created for %d subscriptions."
+msgstr "Betalingslinks blev oprettet for %d abonnementer."
 
-#: classes/instances/vipps.php:55
-msgid "Pay with Vipps"
-msgstr "Betal med Vipps"
+#: classes/modules/woocommerce-coolpay-admin-orders.php:103
+#, php-format
+msgid "Payment link creation skipped for order #%s"
+msgstr "Oprettelse af betalingslink blev ikke udført for ordre #%s"
+
+#: classes/modules/woocommerce-coolpay-admin-orders.php:118
+msgid "A parent order must be mapped to the subscription."
+msgstr "En parent ordre skal være tilknyttet abonnementet."
+
+#: classes/modules/woocommerce-coolpay-admin-orders.php:139
+#, php-format
+msgid "Invalid payment link received from API for order #%s"
+msgstr "Ugyldig callback body vedr. ordre #%s"
+
+#: classes/modules/woocommerce-coolpay-admin-orders.php:153
+#, php-format
+msgid "Payment link manually created from backend: %s"
+msgstr "Et betalingslink blev manuelt oprettet fra backenden: %s"
+
+#: classes/modules/woocommerce-coolpay-admin-orders.php:159
+#, php-format
+msgid "Payment link could not be created for order #%s. Error: %s"
+msgstr "Betalingslink kunne ikke oprettes for ordre #%s. Fejl: %s"
+
+#: classes/modules/woocommerce-coolpay-admin-orders.php:171
+#: classes/modules/woocommerce-coolpay-admin-orders.php:184
+msgid "Create payment link"
+msgstr "Opret betalingslink"
 
 #: classes/woocommerce-coolpay-exceptions.php:81
 #, php-format
@@ -272,6 +233,26 @@ msgstr ""
 #: classes/woocommerce-coolpay-install.php:156
 msgid "You are not authorized to perform this action"
 msgstr "Du har ikke rettigeder til at udføre denne handling"
+
+#: classes/woocommerce-coolpay-order.php:193
+msgid "Payment Fee"
+msgstr "Betalingsgebyr"
+
+#: classes/woocommerce-coolpay-order.php:664
+msgid "Customer Email"
+msgstr "Kunde Email"
+
+#: classes/woocommerce-coolpay-order.php:669
+msgid "Customer Phone"
+msgstr "Kunde Telefon"
+
+#: classes/woocommerce-coolpay-order.php:674
+msgid "User Agent"
+msgstr "User Agent"
+
+#: classes/woocommerce-coolpay-order.php:679
+msgid "Shipping Method"
+msgstr "Leveringsmetode"
 
 #: classes/woocommerce-coolpay-settings.php:28
 msgid "Enable CoolPay Payment"
@@ -391,12 +372,12 @@ msgstr "Betalingsmetoder"
 #: classes/woocommerce-coolpay-settings.php:133
 msgid ""
 "Default: creditcard. Type in the cards you wish to accept (comma separated). "
-"See the valid payment types here: <b>https://coolpay.com/docs/payment-"
-"methods/</b>"
+"See the valid payment types here: <b>http://tech.coolpay.net/appendixes/"
+"payment-methods/</b>"
 msgstr ""
 "Standard: creditcard. Indtast de korttyper, du ønsker at aktivere "
-"(kommasepareret). Se en liste med de mulige betalingstyper her: <b>https://"
-"coolpay.com/docs/payment-methods/</b>"
+"(kommasepareret). Se en liste med de mulige betalingstyper her: <b>http://"
+"tech.coolpay.net/appendixes/payment-methods/</b>"
 
 #: classes/woocommerce-coolpay-settings.php:137
 msgid "Branding ID"
@@ -474,8 +455,8 @@ msgstr "Kreditkort-ikoner"
 
 #: classes/woocommerce-coolpay-settings.php:207
 msgid ""
-"Choose the card icons you wish to show next to the CoolPay payment option in "
-"your shop."
+"Choose the card icons you wish to show next to the CoolPay payment option "
+"in your shop."
 msgstr ""
 "Markér de kortikoner du vil vise ud for CoolPay betalingsmetoden i din shop."
 
@@ -614,6 +595,28 @@ msgid ""
 msgstr ""
 "Markér automatisk ordren som ‘Gennemført’ ved succesfuld abonnementsfornyelse"
 
+#: templates/woocommerce/emails/customer-coolpay-payment-link.php:27
+#: templates/woocommerce/emails/plain/customer-coolpay-payment-link.php:25
+#, php-format
+msgid "Hi %s,"
+msgstr "Hej %s,"
+
+#: templates/woocommerce/emails/customer-coolpay-payment-link.php:29
+#: templates/woocommerce/emails/plain/customer-coolpay-payment-link.php:27
+msgid "Thank you for your order."
+msgstr "Tak for din bestilling."
+
+#: templates/woocommerce/emails/customer-coolpay-payment-link.php:32
+#: templates/woocommerce/emails/plain/customer-coolpay-payment-link.php:29
+#, php-format
+msgid "Use the following link to pay and complete your order: %s"
+msgstr "Benyt følgende link for at betale og fuldføre din ordre: %s"
+
+#: templates/woocommerce/emails/customer-coolpay-payment-link.php:56
+#: templates/woocommerce/emails/plain/customer-coolpay-payment-link.php:54
+msgid "Thanks for shopping with us."
+msgstr "Tak fordi du handler hos os."
+
 #: views/bulk-actions.php:3
 msgid "Capture payment and activate subscription"
 msgstr "Træk betaling og aktiver abonnement"
@@ -682,41 +685,41 @@ msgstr ""
 msgid "Cached"
 msgstr "Cachet"
 
-#: woocommerce-coolpay.php:32
+#: woocommerce-coolpay.php:31
 msgid "WooCommerce CoolPay requires WooCommerce to be active."
 msgstr "WooCommerce CoolPay kræver at WooCommerce er aktiv."
 
-#: woocommerce-coolpay.php:33
+#: woocommerce-coolpay.php:32
 msgid "Go to the plugins page to activate WooCommerce"
 msgstr "Gå til plugin-siden for at aktivere WooCommerce"
 
-#: woocommerce-coolpay.php:292
+#: woocommerce-coolpay.php:294
 msgid "Settings"
 msgstr "Indstillinger"
 
-#: woocommerce-coolpay.php:599
+#: woocommerce-coolpay.php:601
 #, php-format
 msgid "No transaction ID for order: %s"
 msgstr "Intet transaktions-id for ordre nr: %s"
 
-#: woocommerce-coolpay.php:609
+#: woocommerce-coolpay.php:611
 msgid "A non-captured payment cannot be refunded."
 msgstr "En betaling der ikke er trukket, kan ikke refunderes."
 
-#: woocommerce-coolpay.php:611
+#: woocommerce-coolpay.php:613
 msgid "Transaction state does not allow refunds."
 msgstr "Ordrens transaktionsstatus tillader ikke refunderinger."
 
-#: woocommerce-coolpay.php:768
+#: woocommerce-coolpay.php:770
 msgid "CoolPay Transaction ID"
 msgstr "CoolPay Transaktions-ID"
 
-#: woocommerce-coolpay.php:797
+#: woocommerce-coolpay.php:799
 #, php-format
 msgid "CoolPay Transaction ID updated from #%d to #%d"
 msgstr "CoolPay Transaktions-ID blev opdateret fra #%d til #%d"
 
-#: woocommerce-coolpay.php:863
+#: woocommerce-coolpay.php:865
 msgid ""
 "<p><strong>Payment failure</strong> A problem with your payment on order "
 "<strong>#%i</strong> occured. Please try again to complete your order.</p>"
@@ -725,19 +728,19 @@ msgstr ""
 "<strong>#%i</strong>. Prøv venligst igen for at færddiggøre din bestilling.</"
 "p>"
 
-#: woocommerce-coolpay.php:870 woocommerce-coolpay.php:1120
+#: woocommerce-coolpay.php:872 woocommerce-coolpay.php:1122
 msgid "CoolPay Payment"
 msgstr "CoolPay betaling"
 
-#: woocommerce-coolpay.php:870
+#: woocommerce-coolpay.php:872
 msgid "Cancelled during process"
 msgstr "Annulleret under betalingsprocessen"
 
-#: woocommerce-coolpay.php:872
+#: woocommerce-coolpay.php:874
 msgid "Payment cancelled"
 msgstr "Betaling annulleret"
 
-#: woocommerce-coolpay.php:872
+#: woocommerce-coolpay.php:874
 msgid ""
 "Due to cancellation of your payment, the order process was not completed. "
 "Please fulfill the payment to complete your order."
@@ -745,140 +748,140 @@ msgstr ""
 "Da du har annulleret betalingen, er din ordre ikke gennemført. Fortsæt "
 "betalingsprocessen for at gennemføre din bestilling."
 
-#: woocommerce-coolpay.php:872
+#: woocommerce-coolpay.php:874
 #, php-format
 msgid "<p><strong>%s</strong>: %s</p>"
 msgstr "<p><strong>%s</strong>: %s</p>"
 
-#: woocommerce-coolpay.php:927
+#: woocommerce-coolpay.php:929
 msgid "Payment cancelled."
 msgstr "Betaling annulleret."
 
-#: woocommerce-coolpay.php:932
+#: woocommerce-coolpay.php:934
 msgid "Payment captured."
 msgstr "Betaling hævet."
 
-#: woocommerce-coolpay.php:936
+#: woocommerce-coolpay.php:938
 #, php-format
 msgid "Refunded %s %s"
 msgstr "Refunderet %s %s"
 
-#: woocommerce-coolpay.php:952
+#: woocommerce-coolpay.php:954
 #, php-format
 msgid "Subscription authorized. Transaction ID: %s"
 msgstr "Abonnement autoriseret. Transaktions-ID: %s"
 
-#: woocommerce-coolpay.php:998
+#: woocommerce-coolpay.php:1000
 #, php-format
 msgid "An error occured while setting transaction id: %d on order %s. %s"
 msgstr ""
 "Der opstod en fejl ifbm. indsættelse af transactions id: %d på ordre %s. %s"
 
-#: woocommerce-coolpay.php:1008
+#: woocommerce-coolpay.php:1010
 #, php-format
 msgid "Payment authorized. Transaction ID: %s"
 msgstr "Betaling autoriseret. Transaktions ID: %s"
 
-#: woocommerce-coolpay.php:1026
+#: woocommerce-coolpay.php:1028
 #, php-format
 msgid "Transaction failed for #%s."
 msgstr "Transaktionen for #%s fejlede."
 
-#: woocommerce-coolpay.php:1027
+#: woocommerce-coolpay.php:1029
 #, php-format
 msgid "CoolPay status code: %s."
 msgstr "CoolPay statuskode: %s."
 
-#: woocommerce-coolpay.php:1028
+#: woocommerce-coolpay.php:1030
 #, php-format
 msgid "CoolPay status message: %s."
 msgstr "CoolPay statusbesked: %s."
 
-#: woocommerce-coolpay.php:1029
+#: woocommerce-coolpay.php:1031
 #, php-format
 msgid "Acquirer status code: %s"
 msgstr "Statuskode fra indløser: %s"
 
-#: woocommerce-coolpay.php:1030
+#: woocommerce-coolpay.php:1032
 #, php-format
 msgid "Acquirer status message: %s"
 msgstr "Statusbesked fra indløser: %s"
 
-#: woocommerce-coolpay.php:1047
+#: woocommerce-coolpay.php:1049
 #, php-format
 msgid "Invalid callback body for order #%s."
 msgstr "Ugyldig callback body vedr. ordre #%s."
 
-#: woocommerce-coolpay.php:1089
+#: woocommerce-coolpay.php:1091
 msgid "Allows you to receive payments via CoolPay."
 msgstr "Modtag betalinger via CoolPay."
 
-#: woocommerce-coolpay.php:1124
+#: woocommerce-coolpay.php:1126
 msgid "CoolPay Subscription"
 msgstr "CoolPay Abonnement"
 
-#: woocommerce-coolpay.php:1154 woocommerce-coolpay.php:1228
+#: woocommerce-coolpay.php:1167 woocommerce-coolpay.php:1255
 msgid "Current payment state"
 msgstr "Nuværende transaktionsstatus"
 
-#: woocommerce-coolpay.php:1157
+#: woocommerce-coolpay.php:1170
 msgid "Actions"
 msgstr "Handlinger"
 
-#: woocommerce-coolpay.php:1161 woocommerce-coolpay.php:1168
+#: woocommerce-coolpay.php:1174 woocommerce-coolpay.php:1181
 msgid "You are about to CAPTURE this payment"
 msgstr "Du er ved at TRÆKKE denne betaling"
 
-#: woocommerce-coolpay.php:1161
+#: woocommerce-coolpay.php:1174
 #, php-format
 msgid "Capture Full Amount (%s)"
 msgstr "Træk hele beløbet (%s)"
 
-#: woocommerce-coolpay.php:1164
+#: woocommerce-coolpay.php:1177
 msgid "Remaining balance"
 msgstr "Resterende balance"
 
-#: woocommerce-coolpay.php:1165
+#: woocommerce-coolpay.php:1178
 msgid "Capture amount"
 msgstr "Træk beløb"
 
-#: woocommerce-coolpay.php:1168
+#: woocommerce-coolpay.php:1181
 msgid "Capture Specified Amount"
 msgstr "Træk specificeret beløb"
 
-#: woocommerce-coolpay.php:1173
+#: woocommerce-coolpay.php:1186
 msgid "You are about to CANCEL this payment"
 msgstr "Du er ved at ANNULLERE denne betaling"
 
-#: woocommerce-coolpay.php:1173
+#: woocommerce-coolpay.php:1186
 msgid "Cancel"
 msgstr "Annuller"
 
-#: woocommerce-coolpay.php:1179 woocommerce-coolpay.php:1230
+#: woocommerce-coolpay.php:1192 woocommerce-coolpay.php:1257
 msgid "Transaction ID"
 msgstr "Transaktions-ID"
 
-#: woocommerce-coolpay.php:1183 woocommerce-coolpay.php:1234
+#: woocommerce-coolpay.php:1196 woocommerce-coolpay.php:1261
 msgid "Transaction Order ID"
 msgstr "Transaktions Ordre ID"
 
-#: woocommerce-coolpay.php:1198
+#: woocommerce-coolpay.php:1215
 msgid "Payment ID"
 msgstr "Betalings-ID"
 
-#: woocommerce-coolpay.php:1203
+#: woocommerce-coolpay.php:1220
 msgid "Payment Link"
 msgstr "Betalingslink"
 
-#: woocommerce-coolpay.php:1226
+#: woocommerce-coolpay.php:1247
 msgid "subscription"
 msgstr "abonnement"
 
-#: woocommerce-coolpay.php:1277
+#: woocommerce-coolpay.php:1306
 msgid "Payment"
 msgstr "Betaling"
 
-#: woocommerce-coolpay.php:1313
+#: woocommerce-coolpay.php:1342
 msgid "Failed renewal"
 msgstr "Fornyelse fejlede"
 
@@ -919,9 +922,6 @@ msgstr "http://perfect-solution.dk"
 #~ msgid "Recurring payment failed"
 #~ msgstr "Tilbagevendende betaling blev registreret."
 
-#~ msgid "Enable/Disable"
-#~ msgstr "Aktiver/Deaktiver"
-
 #, fuzzy
 #~| msgid "Enable CoolPay Payment"
 #~ msgid "Enable Coolpay Payment"
@@ -955,8 +955,8 @@ msgstr "http://perfect-solution.dk"
 #, fuzzy
 #~| msgid ""
 #~| "Default: creditcard. Type in the cards you wish to accept (comma "
-#~| "separated). See the valid payment types here: <b>http://tech.coolpay.net/"
-#~| "appendixes/payment-methods/</b>"
+#~| "separated). See the valid payment types here: <b>http://tech.coolpay."
+#~| "net/appendixes/payment-methods/</b>"
 #~ msgid ""
 #~ "Default: creditcard. Type in the cards you wish to accept (comma "
 #~ "separated). See the valid payment types here: <b>http://coolpay.dk/"
@@ -964,7 +964,7 @@ msgstr "http://perfect-solution.dk"
 #~ msgstr ""
 #~ "Standard: creditcard. Indtast de korttyper, du ønsker at aktivere "
 #~ "(kommasepareret). Se en liste med de mulige betalingstyper her: <b>http://"
-#~ "tech.coolpay.com/appendixes/payment-methods/</b>"
+#~ "tech.coolpay.net/appendixes/payment-methods/</b>"
 
 #, fuzzy
 #~| msgid "Enable Swipp payment"
@@ -1027,8 +1027,8 @@ msgstr "http://perfect-solution.dk"
 #~| "Choose the card icons you wish to show next to the CoolPay payment "
 #~| "option in your shop."
 #~ msgid ""
-#~ "Choose the card icons you wish to show next to the Coolpay payment option "
-#~ "in your shop."
+#~ "Choose the card icons you wish to show next to the Coolpay payment "
+#~ "option in your shop."
 #~ msgstr ""
 #~ "Markér de kortikoner du vil vise ud for CoolPay betalingsmetoden i din "
 #~ "shop."
@@ -1218,6 +1218,11 @@ msgstr "http://perfect-solution.dk"
 #~ msgstr "Dette moduls primære konfiguration ligger under fanen 'CoolPay'."
 
 #, fuzzy
+#~| msgid "Enable ViaBill payment"
+#~ msgid "Enable Paii payment"
+#~ msgstr "Aktiver betalinger med ViaBill"
+
+#, fuzzy
 #~| msgid "Enable autofee"
 #~ msgid "Enable auto redirect"
 #~ msgstr "Aktiver automatiske gebyrer (autofee)"
@@ -1271,9 +1276,6 @@ msgstr "http://perfect-solution.dk"
 #~ msgid "Phone"
 #~ msgstr "Telefon"
 
-#~ msgid "Email"
-#~ msgstr "E-mail"
-
 #~ msgid ""
 #~ "Your Payment Window agreement merchant id. Found in the \"Integration\" "
 #~ "tab inside the CoolPay manager."
@@ -1318,6 +1320,9 @@ msgstr "http://perfect-solution.dk"
 
 #~ msgid "Recurring payment successfully registered."
 #~ msgstr "Tilbagevendende betaling blev registreret."
+
+#~ msgid "Enable Swipp payment"
+#~ msgstr "Aktiver betalinger med Swipp"
 
 #~ msgid "Swipp"
 #~ msgstr "Swipp"

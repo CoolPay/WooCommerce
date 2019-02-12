@@ -78,7 +78,7 @@ class CoolPay_Exception extends Exception
 	{	
 		printf( 
 			wp_kses( 
-				__( "An error occured. For more information check out the <strong>%s</strong> logs inside <strong>WooCommerce -> System Status -> Logs</strong>.", 'woo-coolpay' ), array( 'strong' => array() )
+				__( "An error occured. For more information check out the <strong>%s</strong> logs inside <strong>WooCommerce -> System Status -> Logs</strong>.", 'woo-coolpay' ), array( 'strong' => array() ) 
 			), 
 			$this->log->get_domain() 
 		);
@@ -86,7 +86,7 @@ class CoolPay_Exception extends Exception
 }
 
 
-class CoolPay_API_Exception extends CoolPay_Exception
+class CoolPay_API_Exception extends CoolPay_Exception 
 { 	
   	/**
 	* write_to_logs function.

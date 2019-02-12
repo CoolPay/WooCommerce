@@ -3,10 +3,10 @@
 
 	// DOM ready
 	$(function() {
-		var qpform = $('#coolpay-payment-form');
-		if (qpform.length) {
+		var cpform = $('#coolpay-payment-form');
+		if (cpform.length) {
 			setTimeout(function () {
-				qpform.submit();
+				cpform.submit();
 			}, 5000);
 		}
 	});
